@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Download artifact - libglibutil
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          repo: clearfraction/libglibutil
+          workflow: build-core.yml
       - name: Download artifact - libgbinder
         uses: dawidd6/action-download-artifact@v2
         with:
