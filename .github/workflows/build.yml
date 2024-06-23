@@ -14,7 +14,13 @@ jobs:
         with:
           repo: clearfraction/libgbinder
           workflow: build.yml
-          check_artifacts: true       
+          check_artifacts: true
+      - name: Download artifact - libglibutil
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          repo: clearfraction/libglibutil
+          workflow: build-core.yml
+          check_artifacts: true
       - name: Building a package
         run: |
           curl -LO https://raw.githubusercontent.com/clearfraction/tools/master/build.sh && chmod +x build.sh
